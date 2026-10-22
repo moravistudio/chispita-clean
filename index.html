@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chispita Clean Lavandería — Tu ropa limpia, sin complicaciones</title>
+<meta name="description" content="Lavandería a domicilio: recojo y entrega, lavado profesional, secado y planchado. Pide tu servicio por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0060a8;--blue2:#0a4f8f;--cyan:#00c0f0;--ink:#0b2f5c;--txt:#34495e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.lv-wrap{width:min(1240px,100% - 48px);margin:0 auto}
+/* ---------- barra superior ---------- */
+.lv-top{position:absolute;left:0;right:0;top:0;z-index:20}
+.lv-top .lv-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.lv-logo img{height:clamp(58px,6.6vw,92px);width:auto}
+.lv-menu{display:flex;gap:clamp(18px,2.6vw,42px);font:600 15px 'Poppins',sans-serif;color:var(--ink)}
+.lv-menu a{position:relative;padding:6px 0}
+.lv-menu a.on::after,.lv-menu a:hover::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--cyan)}
+.lv-btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;font:600 15px 'Poppins',sans-serif;padding:13px 24px;color:#fff;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.lv-btn:hover{transform:translateY(-2px)}
+.lv-btn svg{width:20px;height:20px;flex:none}
+.lv-btn--dark{background:var(--blue);box-shadow:0 8px 22px rgba(0,96,168,.3)}
+.lv-btn--cyan{background:linear-gradient(180deg,#2ddb6e,#20c05c);box-shadow:0 10px 26px rgba(37,211,102,.42);padding:15px 28px;font-weight:700}
+.lv-burger{display:none;border:0;background:transparent;width:44px;height:44px;border-radius:12px;color:var(--blue)}
+/* ---------- portada ---------- */
+.lv-hero{position:relative;padding:clamp(88px,7.6vw,108px) 0 clamp(36px,4vw,56px);background:#fff;overflow:hidden;isolation:isolate}
+.lv-hero::after{content:'';position:absolute;z-index:-1;left:-10%;right:-10%;bottom:-2px;height:150px;background:linear-gradient(180deg,transparent,#e9f7ff);clip-path:ellipse(70% 100% at 50% 100%)}
+.lv-hero .lv-wrap{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);grid-template-areas:'txt art' 'ben art';grid-template-rows:auto 1fr;column-gap:20px;align-items:start}
+.lv-txt{grid-area:txt;padding-top:clamp(14px,4.4vw,60px)}
+.lv-h1{font:800 clamp(38px,5.2vw,72px)/1.04 'Poppins',sans-serif;color:var(--ink);letter-spacing:-.02em}
+.lv-h1 .sc{display:block;font:400 clamp(34px,4.5vw,64px)/1.1 'Kaushan Script',cursive;color:#1b7fd6;letter-spacing:0;margin-top:4px;white-space:nowrap;transform:rotate(-2deg);transform-origin:left}
+.lv-lead{margin-top:22px;max-width:460px;font-size:clamp(15px,1.25vw,18px);line-height:1.55;color:#3b4f66}
+.lv-cta{margin-top:28px}
+.lv-art{grid-area:art;position:relative;aspect-ratio:1374/1145;margin:-1% -6% -4% -8%}
+.lv-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .25s ease-out}
+.bub{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0 9%,rgba(255,255,255,.35) 12%,rgba(120,205,255,.18) 40%,rgba(0,150,230,.32) 78%,rgba(0,120,210,.5) 100%);box-shadow:inset -3px -4px 8px rgba(255,255,255,.55),0 3px 10px rgba(0,140,230,.18);animation:bubUp var(--d,9s) ease-in-out infinite;animation-delay:var(--l,0s);opacity:.9}
+@keyframes bubUp{0%{transform:translate(0,0) scale(.9)}25%{transform:translate(8px,-14px) scale(1)}50%{transform:translate(-6px,-26px) scale(1.04)}75%{transform:translate(9px,-12px) scale(1)}100%{transform:translate(0,0) scale(.9)}}
+/* ---------- beneficios ---------- */
+.lv-ben{grid-area:ben;position:relative;z-index:5;margin-top:clamp(26px,3vw,42px)}
+.lv-ben .card{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:100%;background:#fff;border:1.5px solid #bfe8fb;border-radius:22px;padding:14px 12px;box-shadow:0 18px 44px rgba(0,140,220,.16)}
+.ben{display:flex;align-items:center;gap:9px;font:600 12.5px/1.28 'Poppins',sans-serif;color:var(--ink)}
+.ben .bico{flex:none;width:46px;height:46px;mix-blend-mode:multiply}
+.ico{flex:none;width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#e8f8ff,#c5ecff);box-shadow:inset 0 0 0 1.5px #b3e3fb,0 6px 14px rgba(0,150,230,.18)}
+.ico svg{width:30px;height:30px}
+/* ---------- servicios ---------- */
+.lv-sec{padding:clamp(56px,7vw,96px) 0 0}
+.lv-h2{font:700 clamp(26px,2.8vw,38px)/1.15 'Poppins',sans-serif;color:var(--ink)}
+.lv-sub{margin-top:8px;font-size:clamp(14px,1.2vw,17px);color:#5a6b80}
+.lv-serv{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px);margin-top:28px}
+.sv{background:#fff;border:1.5px solid #cdebfb;border-radius:22px;padding:26px 14px 22px;text-align:center;box-shadow:0 12px 30px rgba(0,140,220,.09);transition:transform .25s,box-shadow .25s}
+.sv:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,140,220,.2)}
+.sv .ph{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;margin-bottom:14px}
+.sv{padding:12px 12px 20px}
+.sv .ico{display:none}
+.sv .ico{width:78px;height:78px;border-radius:22px;margin:0 auto 14px}
+.sv .ico svg{width:46px;height:46px}
+.sv b{display:block;font:700 17px 'Poppins',sans-serif;color:var(--ink)}
+.sv small{display:block;margin-top:4px;font:600 12.5px 'Nunito',sans-serif;color:#2c8fcf}
+/* ---------- cómo funciona ---------- */
+.lv-how{position:relative;overflow:hidden}
+.lv-how .lv-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:center;gap:20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px);margin-top:26px}
+.st{background:#fff;border-radius:18px;padding:4px 0}
+.st .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:700 20px 'Poppins',sans-serif;color:#fff;background:linear-gradient(145deg,#0a7cd8,#0060a8);box-shadow:0 8px 18px rgba(0,96,168,.35)}
+.st b{display:block;margin-top:12px;font:700 16px 'Poppins',sans-serif;color:var(--ink)}
+.st p{margin-top:5px;font-size:14px;line-height:1.5;color:#5a6b80}
+.van{position:relative;aspect-ratio:1672/941;margin-right:-8%}
+.van img.v{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.van .door{position:absolute;left:58.5%;top:52%;width:11.5%;transform:perspective(500px) rotateY(-16deg) skewY(2deg);transform-origin:left center;opacity:.97;pointer-events:none}
+.van .door img{width:100%}
+/* ---------- franja final ---------- */
+.lv-band{position:relative;margin-top:clamp(40px,5vw,70px);padding:28px 0 0;min-height:362px;background:linear-gradient(180deg,#e4f6ff,#c9ecff);overflow:hidden;isolation:isolate}
+.lv-band .splash{position:absolute;z-index:0;left:0;top:calc(230px - .172 * 100vw);width:100%;height:auto;mix-blend-mode:multiply;pointer-events:none}
+.lv-band .lv-wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:30px}
+.lv-band h3{font:700 clamp(24px,2.6vw,36px)/1.15 'Poppins',sans-serif;color:var(--ink)}
+.lv-band p{margin:6px 0 18px;font-size:clamp(15px,1.3vw,18px);color:#40617f}
+.tslides{display:grid;max-width:520px;width:100%;justify-self:end}
+.testi{grid-area:1/1;background:#fff;border-radius:22px;padding:24px 26px 30px;box-shadow:0 16px 40px rgba(0,100,180,.16);opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.testi.on{opacity:1;transform:none;pointer-events:auto}
+.tdots{display:flex;gap:7px;justify-content:center;margin-top:12px}
+.tdots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:rgba(0,96,168,.28);cursor:pointer;transition:background .3s,transform .3s}
+.tdots button.on{background:var(--blue);transform:scale(1.25)}
+.stars{color:#ffb300;letter-spacing:3px;font-size:18px}
+.tcol{max-width:520px;width:100%;justify-self:end}.tcol .tslides{max-width:none}
+.testi q{display:block;margin-top:8px;font-size:15.5px;line-height:1.55;color:#34495e;quotes:none}
+.testi cite{display:block;margin-top:10px;font:700 13.5px 'Poppins',sans-serif;color:var(--ink);font-style:normal}
+/* ---------- precios (de ejemplo) ---------- */
+.lv-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.8vw,24px);margin-top:28px}
+.pr{background:#fff;border:1.5px solid #cdebfb;border-radius:22px;padding:26px 24px;box-shadow:0 12px 30px rgba(0,140,220,.09)}
+.pr.hot{background:linear-gradient(160deg,#0a6fc0,#0060a8);color:#fff;border-color:transparent;box-shadow:0 20px 44px rgba(0,96,168,.35)}
+.pr h4{font:700 18px 'Poppins',sans-serif;color:var(--ink)} .pr.hot h4{color:#fff}
+.pr .p{margin:10px 0 12px;font:800 34px 'Poppins',sans-serif;color:var(--blue)} .pr.hot .p{color:#fff}
+.pr .p small{font:600 14px 'Nunito',sans-serif;opacity:.75}
+.pr li{list-style:none;padding:5px 0 5px 24px;position:relative;font-size:14.5px}
+.pr li::before{content:'✓';position:absolute;left:0;color:var(--cyan);font-weight:800}
+.note{margin-top:14px;font-size:12.5px;color:#7a8a9d}
+/* ---------- pie ---------- */
+.lv-foot{margin-top:clamp(56px,7vw,96px);background:linear-gradient(180deg,#e9f7ff,#d0edfc);color:#3b5772;padding:40px 0 30px;border-top:1px solid #c3e6f8}
+.lv-foot .lv-wrap{display:flex;flex-wrap:wrap;gap:24px 90px;justify-content:flex-start;align-items:center;padding-right:90px}
+.lv-foot img{height:78px;width:auto}
+.lv-foot b{display:block;color:var(--ink);font:700 15px 'Poppins',sans-serif;margin-bottom:6px}
+.lv-foot .mv{color:var(--blue);font-weight:700;text-decoration:underline}
+.lv-foot small{display:block;margin-top:22px;opacity:.7;font-size:12.5px;width:100%}
+.wa{position:fixed;right:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,28px);z-index:50;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.55);transition:transform .2s}
+.wa:hover{transform:scale(1.08)}.wa svg{width:32px;height:32px;color:#fff}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+/* ---------- celular ---------- */
+@media (max-width:960px){
+  .lv-menu{display:none}.lv-burger{display:grid;place-items:center}
+  .lv-top .lv-btn{display:none}
+  .lv-hero .lv-wrap{grid-template-columns:1fr;grid-template-areas:'txt' 'art' 'ben'}
+  .lv-txt{padding-top:6px}
+  .lv-art{margin:10px -6% 0 -6%}
+  .lv-ben .card{grid-template-columns:1fr;width:100%}
+  .lv-serv{grid-template-columns:repeat(2,1fr)}
+  .lv-how .lv-wrap{grid-template-columns:1fr}.van{margin:10px -8% 0 0;max-width:520px}
+  .steps{grid-template-columns:1fr}
+  .lv-band .lv-wrap{grid-template-columns:1fr}.testi{justify-self:stretch}
+  .lv-band{min-height:0;padding-bottom:clamp(110px,24vw,190px)}.lv-band .splash{left:-30%;width:160%;top:auto;bottom:calc(-.1 * 160vw + 20px)}
+  .lv-prices{grid-template-columns:1fr}
+  body.menu-open .lv-menu{display:flex;position:absolute;top:100%;left:24px;right:24px;flex-direction:column;gap:6px;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px rgba(0,60,120,.2)}
+}
+@media (prefers-reduced-motion:reduce){.bub{animation:none}.rv{opacity:1;transform:none;transition:none}.lv-art img{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14c4f4"/><stop offset="1" stop-color="#0060a8"/></linearGradient>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.4A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .5.5l.8 1.900c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.100 1.500 1.800 1 .9 1.800 1.200 2.100 1.300.3.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.800.9c.3.1.4.2.5.3.1.2.1.7-.2 1.300z"/></symbol>
+  <symbol id="i-van" viewBox="0 0 32 32"><path fill="url(#g)" d="M3 9h16v13H3zM19 13h6l4 4v5H19z"/><circle cx="9" cy="23" r="3" fill="#fff" stroke="url(#g)" stroke-width="2"/><circle cx="23" cy="23" r="3" fill="#fff" stroke="url(#g)" stroke-width="2"/></symbol>
+  <symbol id="i-wash" viewBox="0 0 32 32"><rect x="5" y="3" width="22" height="26" rx="4" fill="url(#g)"/><circle cx="16" cy="18" r="7" fill="#fff"/><circle cx="16" cy="18" r="4.5" fill="#7fd6f7"/><circle cx="10" cy="7" r="1.3" fill="#fff"/><circle cx="14" cy="7" r="1.3" fill="#fff"/></symbol>
+  <symbol id="i-fold" viewBox="0 0 32 32"><path fill="url(#g)" d="M6 8l5-3h10l5 3-3 5-2-1v15H11V12l-2 1z"/><path fill="#fff" opacity=".85" d="M26 3l1 2.5 2.5 1-2.5 1L26 10l-1-2.5-2.5-1 2.5-1z"/></symbol>
+  <symbol id="i-shoe" viewBox="0 0 32 32"><path fill="url(#g)" d="M3 20v-4l5-3 4 3 4-3 3 3c2 .6 4 1 6 2 1.200.6 2 1.400 2 3v2H3z"/><path stroke="#fff" stroke-width="1.500" fill="none" stroke-linecap="round" d="M6 24h22M12 16l-1.500 2M16 15l-1.500 2"/></symbol>
+  <symbol id="i-jacket" viewBox="0 0 32 32"><path fill="url(#g)" d="M9 4l7 3 7-3 6 6-3 5-3-1v14H9V14l-3 1-3-5z"/><path stroke="#fff" stroke-width="1.6" fill="none" d="M16 7v21"/><circle cx="19" cy="14" r="1" fill="#fff"/><circle cx="19" cy="19" r="1" fill="#fff"/></symbol>
+  <symbol id="i-jeans" viewBox="0 0 32 32"><path fill="url(#g)" d="M8 3h16l2 26h-6l-4-16-4 16H6z"/><path stroke="#fff" stroke-width="1.4" fill="none" d="M8 7h16"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 32 32"><path fill="url(#g)" d="M11 3l5 4 5-4 7 5-3 6-3-1v15H10V13l-3 1-3-6z"/><path stroke="#fff" stroke-width="1.5" fill="none" d="M16 7v21"/></symbol>
+  <symbol id="i-hanger" viewBox="0 0 32 32"><path fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M16 11a3.5 3.5 0 1 0-3.5-3.5M16 11c0 2-2 3-3.5 4L3 22c-1.5 1 0 3 1.5 3h23c1.5 0 3-2 1.5-3l-9.5-7C18 14 16 13 16 11z"/></symbol>
+</defs></svg>
+
+<header class="lv-top"><div class="lv-wrap">
+  <a class="lv-logo" href="#"><img src="img/logo-chispita-clean.png" alt="Chispita Clean Lavandería" width="739" height="295"></a>
+  <nav class="lv-menu" aria-label="Principal"><a class="on" href="#">Inicio</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a></nav>
+  <button class="lv-burger" id="burger" aria-label="Abrir menú"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+
+<main>
+<section class="lv-hero" id="hero"><div class="lv-wrap">
+  <div class="lv-txt">
+    <h1 class="lv-h1">Tu ropa limpia,<span class="sc">sin complicaciones</span></h1>
+    <p class="lv-lead">En Chispita Clean cuidamos cada prenda como si fuera nuestra. Lavado profesional, secado y planchado, con la comodidad de recojo y entrega a domicilio.</p>
+    <div class="lv-cta"><a class="lv-btn lv-btn--cyan" href="https://wa.me/51941390544?text=Hola%20Chispita%20Clean%2C%20quiero%20pedir%20un%20servicio" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pide tu servicio ahora <span aria-hidden="true">→</span></a></div>
+  </div>
+  <div class="lv-art" id="art"><img src="img/hero-ropa-agua.webp" width="1374" height="1145" alt="Pila de ropa azul doblada rodeada por una ola de agua cristalina"></div>
+<div class="lv-ben"><div class="card rv">
+  <div class="ben"><img class="bico" src="img/benef-1.webp" width="46" height="46" alt="">Recojo y entrega a domicilio</div>
+  <div class="ben"><img class="bico" src="img/benef-2.webp" width="46" height="46" alt="">Lavado profesional y seguro</div>
+  <div class="ben"><img class="bico" src="img/benef-3.webp" width="46" height="46" alt="">Prendas limpias y bien cuidadas</div>
+</div></div>
+</div></section>
+
+
+
+<section class="lv-sec" id="servicios"><div class="lv-wrap">
+  <h2 class="lv-h2 rv">Nuestros servicios</h2><p class="lv-sub rv">Todo tipo de prendas, con el mejor cuidado.</p>
+  <div class="lv-serv">
+    <div class="sv rv"><img class="ph" src="img/servicio-zapatillas.webp" alt="Zapatillas"><span class="ico"><svg><use href="#i-shoe"/></svg></span><b>Zapatillas</b><small>desde S/ 15.00</small></div>
+    <div class="sv rv"><img class="ph" src="img/servicio-pantalon.webp" alt="Pantalones"><span class="ico"><svg><use href="#i-jeans"/></svg></span><b>Pantalones</b><small>desde S/ 8.00</small></div>
+    <div class="sv rv"><img class="ph" src="img/servicio-camisa.webp" alt="Camisas"><span class="ico"><svg><use href="#i-shirt"/></svg></span><b>Camisas</b><small>desde S/ 7.00</small></div>
+    <div class="sv rv"><img class="ph" src="img/servicio-general.webp" alt="Ropa en general"><span class="ico"><svg><use href="#i-hanger"/></svg></span><b>Ropa en general</b><small>desde S/ 6.00</small></div>
+  </div>
+</div></section>
+
+<section class="lv-sec lv-how" id="proceso"><div class="lv-wrap">
+  <div>
+    <h2 class="lv-h2 rv">¿Cómo funciona?</h2>
+    <div class="steps">
+      <div class="st rv"><span class="n">1</span><b>Solicita tu servicio</b><p>Escríbenos por WhatsApp y cuéntanos qué necesitas.</p></div>
+      <div class="st rv"><span class="n">2</span><b>Recojo y lavado</b><p>Nos encargamos del resto, con productos de calidad.</p></div>
+      <div class="st rv"><span class="n">3</span><b>Entrega en tu domicilio</b><p>Recibe tu ropa limpia, lista para usar.</p></div>
+    </div>
+  </div>
+  <div class="van rv"><img class="v" src="img/auto-reparto.webp" width="1672" height="941" alt="Auto de reparto de Chispita Clean" loading="lazy"><div class="door"><img src="img/logo-chispita-clean.png" alt=""></div></div>
+</div></section>
+
+<section class="lv-band"><img class="splash" src="img/salpicadura-agua.webp?v=8" width="1983" height="793" alt="" loading="lazy"><div class="lv-wrap">
+  <div><h3>Tu tiempo es valioso</h3><p>Nosotros cuidamos tu ropa.</p>
+    <a class="lv-btn lv-btn--cyan" href="https://wa.me/51941390544?text=Hola%20Chispita%20Clean%2C%20quiero%20pedir%20un%20servicio" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pide por WhatsApp <span aria-hidden="true">→</span></a></div>
+  <div class="tcol"><div class="tslides" id="tslides"><div class="testi on"><div class="stars" aria-label="5 estrellas">★★★★★</div><q>Excelente servicio, mi ropa quedó perfecta y la entrega fue puntual. ¡Totalmente recomendado!</q><cite>— Carla M.</cite></div><div class="testi"><div class="stars" aria-label="5 estrellas">★★★★★</div><q>Mis zapatillas blancas volvieron a verse nuevas. Muy atentos por WhatsApp. ¡Las recomiendo!</q><cite>— Jorge R.</cite></div><div class="testi"><div class="stars" aria-label="5 estrellas">★★★★★</div><q>Pedí el recojo en mi casa y fue rápido y sin complicaciones. Mi ropa llegó doblada y con olor a limpio.</q><cite>— Lucía P.</cite></div></div><div class="tdots" id="tdots" role="tablist" aria-label="Comentarios"></div></div>
+</div></section>
+
+<section class="lv-sec" id="precios"><div class="lv-wrap">
+  <h2 class="lv-h2 rv">Precios claros</h2><p class="lv-sub rv">Sin sorpresas: pagas lo que ves.</p>
+  <div class="lv-prices">
+    <div class="pr rv"><h4>Lavado por kilo</h4><div class="p">S/ 6<small> /kg</small></div><ul><li>Lavado y secado</li><li>Doblado incluido</li><li>Mínimo 3 kg</li></ul></div>
+    <div class="pr hot rv"><h4>Lavado + planchado</h4><div class="p">S/ 9<small> /kg</small></div><ul><li>Lavado, secado y planchado</li><li>Recojo y entrega gratis</li><li>El más pedido</li></ul></div>
+    <div class="pr rv"><h4>Prendas especiales</h4><div class="p">S/ 8<small> /prenda</small></div><ul><li>Casacas y abrigos</li><li>Edredones y cortinas</li><li>Cuidado delicado</li></ul></div>
+  </div>
+  <p class="note">Precios de ejemplo; se confirmarán antes de publicar.</p>
+</div></section>
+</main>
+
+<footer class="lv-foot" id="contacto"><div class="lv-wrap">
+  <img src="img/logo-chispita-clean.png" alt="Chispita Clean Lavandería">
+  <div><b>Escríbenos</b>WhatsApp: 941 390 544</div>
+  <div><b>Horario</b>Lun a Sáb · 8:00 a 20:00 horas</div>
+  <small>© Chispita Clean Lavandería · Web generada por <a class="mv" href="https://moravistudio.com" target="_blank" rel="noopener">Moravi Studio</a></small>
+</div></footer>
+
+<a class="wa" href="https://wa.me/51941390544?text=Hola%20Chispita%20Clean%2C%20quiero%20pedir%20un%20servicio" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var b = document.getElementById('burger'); b.addEventListener('click', function () { document.body.classList.toggle('menu-open'); });
+  document.querySelectorAll('.lv-menu a').forEach(function (a) { a.addEventListener('click', function () { document.body.classList.remove('menu-open'); }); });
+  var els = [].slice.call(document.querySelectorAll('.rv'));
+  if ('IntersectionObserver' in window && !reduce) { var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .15 }); els.forEach(function (e) { io.observe(e); }); }
+  else els.forEach(function (e) { e.classList.add('in'); });
+  // burbujas: flotan, y al pasar el cursor (o el dedo) por encima REVIENTAN y salen otra vez en otro sitio
+  function place(b, zone) { var x, y; if (zone === 'band') { if (Math.random() < .7) { x = 2 + Math.random() * 94; y = 62 + Math.random() * 30; } else { x = 52 + Math.random() * 44; y = 4 + Math.random() * 56; } } else { x = 2 + Math.random() * 92; y = 2 + Math.random() * 90; } b.style.left = x + '%'; b.style.top = y + '%'; }
+  function bubbles(host, n, minS, maxS, zone, rise) { for (var i = 0; i < n; i++) { var s = document.createElement('span'), z = minS + Math.random() * (maxS - minS); s.className = 'bub' + (rise ? ' rise' : ''); s.style.cssText = 'width:' + z + 'px;height:' + z + 'px;--d:' + (rise ? 6 + Math.random() * 6 : 7 + Math.random() * 7) + 's;--l:' + (-Math.random() * 10) + 's'; place(s, zone); host.appendChild(s); }
+    if (reduce) return;
+    function hit(e) { host.querySelectorAll('.bub:not(.pop)').forEach(function (b) { var r = b.getBoundingClientRect(); if (Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2)) < r.width / 2 + 8) { b.classList.add('pop'); setTimeout(function () { place(b, zone); b.classList.remove('pop'); }, 520); } }); }
+    host.addEventListener('pointermove', hit, { passive: true }); host.addEventListener('pointerdown', hit, { passive: true }); }
+  // comentarios: cambian solos cada 3 segundos (se detienen mientras el cursor está encima)
+  (function () { var cards = [].slice.call(document.querySelectorAll('#tslides .testi')), dots = document.getElementById('tdots'), i = 0, timer = 0, over = false;
+    cards.forEach(function (c, k) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Comentario ' + (k + 1)); b.addEventListener('click', function () { show(k); restart(); }); dots.appendChild(b); });
+    function show(n) { i = n; cards.forEach(function (c, k) { c.classList.toggle('on', k === n); }); [].forEach.call(dots.children, function (b, k) { b.classList.toggle('on', k === n); }); }
+    function restart() { clearInterval(timer); if (!reduce) timer = setInterval(function () { if (!over && !document.hidden) show((i + 1) % cards.length); }, 3000); }
+    var box = document.getElementById('tslides'); box.addEventListener('pointerenter', function () { over = true; }); box.addEventListener('pointerleave', function () { over = false; });
+    show(0); restart(); })();
+  var art = document.getElementById('art'); bubbles(art, 22, 16, 50, 'free', false);
+  document.querySelectorAll('.lv-band').forEach(function (h) { bubbles(h, 16, 12, 38, 'band', true); });
+  if (!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    var img = art.querySelector('img'), hero = document.getElementById('hero');
+    hero.addEventListener('pointermove', function (e) { var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; img.style.transform = 'translate(' + (x * -14) + 'px,' + (y * -10) + 'px) scale(1.015)'; });
+    hero.addEventListener('pointerleave', function () { img.style.transform = ''; });
+  }
+})();
+</script>
+</body>
+</html>
